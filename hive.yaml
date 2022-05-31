@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hive
+spec:
+  selector:
+    name: hive
+  clusterIP: None
+  ports:
+  - name: hive
+    port: 9083
+    targetPort: 9083
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hive
+  labels:
+    name: hive
+spec:
+  containers:
+    - image: gaborgsomogyi/hive:latest
+      imagePullPolicy: Never
+      name: hive
+      volumeMounts:
+        - mountPath: /share
+          name: volume
+  volumes:
+    - name: volume
+      hostPath:
+        path: /share
+        type: Directory
