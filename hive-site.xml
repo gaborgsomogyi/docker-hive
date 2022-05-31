@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>datanucleus.schema.autoCreateAll</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+    <property>
+        <name>fs.pfile.impl</name>
+        <value>org.apache.hadoop.fs.ProxyLocalFileSystem</value>
+    </property>
+    <property>
+        <name>metastore.sasl.enabled</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>metastore.kerberos.keytab.file</name>
+        <value>/share/hive-service.keytab</value>
+    </property>
+    <property>
+        <name>metastore.kerberos.principal</name>
+        <value>hive/hive@EXAMPLE.COM</value>
+    </property>
+    <property>
+        <name>metastore.client.kerberos.principal</name>
+        <value>hive/hive@EXAMPLE.COM</value>
+    </property>
+</configuration>
